@@ -16,7 +16,8 @@ jobs:
           name: "box_auth_config.json"
           json: "{}"
           dir: 'include/utils/'
-      - run: docker build . -t test && docker run test find /usr/local/airflow/include/
+#      - run: docker build . -t test && docker run test find /usr/local/airflow/include/
+      - run: (curl -sSL https://install.astronomer.io | sudo bash -s) && astro deploy
       - uses: astronomer/deploy-action@v0.1
 #      - name: docker build
 #        run: docker build . -t test && docker run test find /usr/local/airflow/include/
