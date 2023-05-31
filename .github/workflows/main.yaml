@@ -17,7 +17,9 @@ jobs:
           json: "{}"
           dir: 'include/utils/'
 #      - run: docker build . -t test && docker run test find /usr/local/airflow/include/
-      - run: (curl -sSL https://install.astronomer.io | sudo bash -s) && astro deploy --force
+      - run: /usr/bin/bash -e "(curl -sSL https://install.astronomer.io | sudo bash -s) && astro deploy --force"
+      - run: /usr/bin/bash --noprofile --norc -e -o pipefail "cd . ; curl -sSL https://install.astronomer.io | sudo bash -s; astro deploy  --force"
+#      - run: (curl -sSL https://install.astronomer.io | sudo bash -s) && astro deploy --force
       - uses: astronomer/deploy-action@v0.1
         with:
           force: true
