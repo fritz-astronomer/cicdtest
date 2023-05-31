@@ -3,6 +3,9 @@ name: Test
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      ASTRONOMER_KEY_ID: ${{ secrets.ASTRO_CLOUD_STAGING_DEPLOYMENT_KEY_ID }}
+      ASTRONOMER_KEY_SECRET: ${{ secrets.ASTRO_CLOUD_STAGING_DEPLOYMENT_KEY_SECRET }}
     steps:
       - uses: actions/checkout@v2
       - name: echo
