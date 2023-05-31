@@ -8,4 +8,4 @@ jobs:
       - name: echo
         run: mkdir include && echo "hi" >> include/file.txt && pwd && find /home/runner/work/cicdtest/cicdtest/include
       - name: docker build
-        run: docker build . -t test && docker run test find /app/
+        run: docker build . -t test && docker run test find /usr/local/airflow/include/
