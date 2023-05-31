@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: echo
-        run: mkdir include && echo "hi" >> include/file.txt && pwd && find /home/runner/work/cicdtest/cicdtest/include
+        run: echo "hi" >> include/file.txt && pwd && find /home/runner/work/cicdtest/cicdtest/include
       - id: create-box-auth-json-staging
         uses: jsdaniell/create-json@1.1.2
         with:
