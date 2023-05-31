@@ -1,0 +1,11 @@
+on: ["push"]
+name: Test
+job:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: echo
+        run: mkdir include && echo "hi" >> file.txt
+      - name: docker build
+        run: docker build .
