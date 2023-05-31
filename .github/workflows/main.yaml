@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: echo
-        run: mkdir include && echo "hi" >> file.txt
+        run: mkdir include && echo "hi" >> include/file.txt && pwd && ls include
       - name: docker build
         run: docker build . -t test && docker run test find /app/
