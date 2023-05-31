@@ -7,5 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: echo
         run: mkdir include && echo "hi" >> include/file.txt && pwd && find /home/runner/work/cicdtest/cicdtest/include
-      - name: docker build
-        run: docker build . -t test && docker run test find /usr/local/airflow/include/
+      - uses: astronomer/deploy-action@v0.1
+#      - name: docker build
+#        run: docker build . -t test && docker run test find /usr/local/airflow/include/
