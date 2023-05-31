@@ -10,12 +10,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: echo
         run: echo "hi" >> include/file.txt && pwd && find /home/runner/work/cicdtest/cicdtest/include
-      - id: create-box-auth-json-staging
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: "box_auth_config.json"
-          json: "{}"
-          dir: 'include/utils/'
+#      - id: create-box-auth-json-staging
+#        uses: jsdaniell/create-json@1.1.2
+#        with:
+#          name: "box_auth_config.json"
+#          json: "{}"
+#          dir: 'include/utils/'
       - uses: astronomer/deploy-action@v0.1
 #      - name: docker build
 #        run: docker build . -t test && docker run test find /usr/local/airflow/include/
